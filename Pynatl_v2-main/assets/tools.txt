@@ -1,0 +1,18 @@
+All the assets: music, images, tile sets, sprites and sprite sheets were made by AI generation tools and procesed with other software
+AI used
+Graphics (gen)
+  stable difussion: For almost everything
+    using the browsable templates image2image and lora
+    Models:
+      sd_xl_base_1.0_0.9vae.safetensor
+      pixelArtDifussionXL_spriteShaper.safetensor
+    Loras:
+      pixel-art-xl-v1.1.safetensors
+  Dall-e 3: for the double jump power up sprite
+Music (gen)
+  udio: https://www.udio.com/
+Graphics (processing)
+  Gimp: general image processing and editing
+  smack studio (on steam): creation of the diferent characters spritesheets
+  pixel cut (https://www.pixelcut.ai/es/ai-image-editor?tool=generativeFill ): para correccion en la imagen para el parallax bg
+

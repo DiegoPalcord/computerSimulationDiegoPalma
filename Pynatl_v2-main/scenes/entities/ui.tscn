@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf4de8o1sbamf"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_ciroy"]
+[ext_resource type="PackedScene" uid="uid://ddskww0546kto" path="res://scenes/entities/health_bar.tscn" id="2_tfc1k"]
+[ext_resource type="PackedScene" uid="uid://djyw8d2sxal4q" path="res://scenes/mobile_controls.tscn" id="3_obrct"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yh4od"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0.606326, 0.328811, 4.81307e-07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8ch7"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0.368758, 0.368758, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ve7kl"]
+font_size = 20
+outline_size = 10
+outline_color = Color(0.597129, 0.0468711, 1.92523e-07, 1)
+shadow_size = 14
+shadow_color = Color(0, 0, 0, 0.984314)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jic3"]
+font_size = 24
+outline_size = 10
+outline_color = Color(1.92523e-06, 0.5047, 0.410567, 1)
+shadow_size = 4
+shadow_color = Color(0.0353462, 0.0353462, 0.0353462, 0)
+shadow_offset = Vector2(0, -1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdbof"]
+font_size = 22
+outline_size = 20
+outline_color = Color(0.458824, 0, 0.027451, 1)
+shadow_size = 4
+
+[node name="UI" type="CanvasLayer" groups=["UI"]]
+script = ExtResource("1_ciroy")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_tfc1k")]
+offset_left = 39.0
+offset_top = 18.0
+offset_right = 539.0
+offset_bottom = 38.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 993.0
+offset_top = 24.0
+offset_right = 1124.0
+offset_bottom = 76.0
+text = "🌰: 0
+"
+label_settings = SubResource("LabelSettings_yh4od")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 587.0
+offset_top = 9.0
+offset_right = 831.0
+offset_bottom = 48.0
+text = "🍂: 0"
+label_settings = SubResource("LabelSettings_m8ch7")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 39.0
+offset_right = 197.0
+offset_bottom = 78.0
+text = "100/100"
+label_settings = SubResource("LabelSettings_ve7kl")
+
+[node name="msg" type="Label" parent="."]
+offset_left = 167.0
+offset_top = 122.0
+offset_right = 928.0
+offset_bottom = 383.0
+label_settings = SubResource("LabelSettings_3jic3")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HealthBarBoss" parent="." instance=ExtResource("2_tfc1k")]
+visible = false
+offset_left = 54.0
+offset_top = 612.0
+offset_right = 1106.0
+offset_bottom = 636.0
+
+[node name="BossName" type="Label" parent="."]
+visible = false
+offset_left = 410.0
+offset_top = 577.0
+offset_right = 774.0
+offset_bottom = 609.0
+label_settings = SubResource("LabelSettings_mdbof")
+horizontal_alignment = 1
+vertical_alignment = 2
+justification_flags = 162
+
+[node name="MobileControls" parent="." instance=ExtResource("3_obrct")]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://cekydjp24gdey"]
+
+[ext_resource type="Script" path="res://scripts/music_controler.gd" id="1_1n2af"]
+[ext_resource type="AudioStream" uid="uid://xm8u5gm6pvoa" path="res://assets/music/Echoes-of-the-Wild.wav" id="2_7ijyi"]
+[ext_resource type="AudioStream" uid="uid://dkscqw7an8m5b" path="res://assets/music/Echoes-of-the-Cavern.wav" id="3_nf6t1"]
+[ext_resource type="AudioStream" uid="uid://cdc8qa4evyvtv" path="res://assets/music/Whispers-of-the-Wild-similar-drums.wav" id="4_kmfdl"]
+[ext_resource type="AudioStream" uid="uid://b5bt20jbcsvsq" path="res://assets/music/Echoes-in-the-Cavern.wav" id="5_ic48v"]
+
+[node name="MusicControler" type="Node"]
+script = ExtResource("1_1n2af")
+
+[node name="ForestMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7ijyi")
+
+[node name="PressureMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nf6t1")
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kmfdl")
+
+[node name="CaveMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ic48v")

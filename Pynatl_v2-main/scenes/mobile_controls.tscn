@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://djyw8d2sxal4q"]
+
+[ext_resource type="Texture2D" uid="uid://xb4ma74h8w8s" path="res://assets/misc/arrow_button.png" id="1_nbm34"]
+[ext_resource type="Texture2D" uid="uid://c5b7kd3gpcbyk" path="res://assets/misc/hit_button.png" id="2_d3uel"]
+[ext_resource type="Texture2D" uid="uid://cnrn1dbwmnm16" path="res://assets/misc/special_button.png" id="3_qiv6y"]
+[ext_resource type="Texture2D" uid="uid://xiicbgy4p13y" path="res://assets/misc/interact_button.png" id="4_mfvo3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3oorv"]
+radius = 40.0
+
+[node name="MobileControls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DownTouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(180, 580)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_3oorv")
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="DownTouchScreenButton"]
+position = Vector2(4.00049, -1.3335)
+rotation = 1.5708
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_nbm34")
+
+[node name="RightTouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(300, 580)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_3oorv")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="RightTouchScreenButton"]
+position = Vector2(-1.33319, -4.66724)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_nbm34")
+
+[node name="LeftTouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(60, 580)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_3oorv")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="Sprite2D4" type="Sprite2D" parent="LeftTouchScreenButton"]
+position = Vector2(1.33337, -4.66724)
+scale = Vector2(-0.18, 0.18)
+texture = ExtResource("1_nbm34")
+
+[node name="JumpTouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1040, 540)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_3oorv")
+passby_press = true
+action = "jump"
+visibility_mode = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="JumpTouchScreenButton"]
+position = Vector2(-4.40027, 2.00012)
+rotation = 1.5708
+scale = Vector2(-0.185, -0.185)
+texture = ExtResource("1_nbm34")
+
+[node name="AttackTouchScreenButton2" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(850, 560)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_3oorv")
+passby_press = true
+action = "attack"
+visibility_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="AttackTouchScreenButton2"]
+position = Vector2(-1.5, -3.5)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("2_d3uel")
+
+[node name="SpecialTouchScreenButton3" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.490196)
+position = Vector2(915, 430)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_3oorv")
+passby_press = true
+action = "special"
+visibility_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SpecialTouchScreenButton3"]
+position = Vector2(-1.33325, -4.66663)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("3_qiv6y")
+
+[node name="InteractTouchScreenButton4" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.490196)
+position = Vector2(120, 470)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_3oorv")
+passby_press = true
+action = "interact"
+visibility_mode = 1
+
+[node name="Sprite2D4" type="Sprite2D" parent="InteractTouchScreenButton4"]
+position = Vector2(-1.33331, -4.6665)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("4_mfvo3")

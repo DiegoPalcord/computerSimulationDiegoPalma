@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddskww0546kto"]
+
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="1_aq8xk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg2py"]
+bg_color = Color(0, 0, 0, 0.780392)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syf8r"]
+bg_color = Color(0.552941, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[node name="HealthBar" type="ProgressBar"]
+offset_right = 404.0
+offset_bottom = 54.0
+theme_override_styles/background = SubResource("StyleBoxFlat_rg2py")
+theme_override_styles/fill = SubResource("StyleBoxFlat_syf8r")
+show_percentage = false
+script = ExtResource("1_aq8xk")

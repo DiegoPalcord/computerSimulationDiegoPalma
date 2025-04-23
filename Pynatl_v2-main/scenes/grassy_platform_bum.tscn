@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://x5gewle86qcg"]
+
+[node name="GrassyPlatformBum" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(582, 452, 626, 442, 669, 450, 701, 458, 742, 445, 800, 442, 828, 479, 559, 484)
+one_way_collision = true

@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://b20rt0wh1u4dy"]
+
+[ext_resource type="Script" path="res://scripts/hearth.gd" id="1_qi5g5"]
+[ext_resource type="Texture2D" uid="uid://cw6b1nj8urvno" path="res://assets/misc/hearth.png" id="2_ggx4v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flvpd"]
+atlas = ExtResource("2_ggx4v")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybhtr"]
+atlas = ExtResource("2_ggx4v")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8thcb"]
+atlas = ExtResource("2_ggx4v")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25mj5"]
+atlas = ExtResource("2_ggx4v")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxnqi"]
+atlas = ExtResource("2_ggx4v")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odpp2"]
+atlas = ExtResource("2_ggx4v")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im7ef"]
+atlas = ExtResource("2_ggx4v")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ok8l5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flvpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybhtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8thcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25mj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxnqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odpp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im7ef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el4ww"]
+size = Vector2(21, 22.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxexy"]
+radius = 27.074
+
+[node name="Hearth" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 129
+script = ExtResource("1_qi5g5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.556641, 0.556641)
+sprite_frames = SubResource("SpriteFrames_ok8l5")
+autoplay = "default"
+frame_progress = 0.239256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 5.625)
+shape = SubResource("RectangleShape2D_el4ww")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dxexy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

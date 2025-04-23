@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhupueqkq66pi"]
+
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_upywv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eeb8q"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0.317647, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0.31802, 0.31802, 0.31802, 0)
+shadow_offset = Vector2(0, 0)
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_upywv")
+
+[node name="TransitionCover" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="TransitionCover"]
+z_index = 250
+z_as_relative = false
+offset_left = -3389.0
+offset_top = -2153.0
+offset_right = 35644.0
+offset_bottom = 22645.0
+color = Color(0.099986, 0.099986, 0.099986, 1)
+
+[node name="EntryTextLabel" type="Label" parent="TransitionCover"]
+z_index = 260
+offset_left = 180.0
+offset_top = 38.0
+offset_right = 1010.0
+offset_bottom = 610.0
+text = "\"The gods have come down from the Ilhuicatl and Mictlan and from Xibalba, Ka'an and Tamoanchan to join the war\" Was the message Quetzalcoatl gave to you as a Pynatl, a high ranked member of society dedicated to deliver messages."
+label_settings = SubResource("LabelSettings_eeb8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ExitTextLabel" type="Label" parent="TransitionCover"]
+visible = false
+z_index = 260
+offset_left = 180.0
+offset_top = 38.0
+offset_right = 1010.0
+offset_bottom = 610.0
+text = "Thanks for playing Pynatl (MVP version)!!!
+By Diego Isaías Palma Córdova
+For the Course \"Simulación por Computadora\"
+"
+label_settings = SubResource("LabelSettings_eeb8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LoadingScreenTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="CutsceneTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="FinishGameTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="LoadingScreenTimer" to="." method="_on_loading_screen_timer_timeout"]
+[connection signal="timeout" from="CutsceneTimer" to="." method="_on_cutscene_timer_timeout"]
+[connection signal="timeout" from="FinishGameTimer" to="." method="_on_finish_game_timer_timeout"]

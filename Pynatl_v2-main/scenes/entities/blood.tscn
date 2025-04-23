@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://0at0xv8883uk"]
+
+[node name="Blood" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+one_shot = true
+emission_shape = 2
+emission_sphere_radius = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.473883, 0.00373934, 0, 1)

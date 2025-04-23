@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://df2bpbfwl4neo"]
+
+[node name="PlatformEditable" type="StaticBody2D"]
+collision_layer = 128
+collision_mask = 94
